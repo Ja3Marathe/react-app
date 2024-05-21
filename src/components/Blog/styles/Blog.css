@@ -1,0 +1,14 @@
+.BlogContainer {
+    display: flex;
+    width: 600px;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.BlogContainer h3 {
+    margin-bottom: 8px;
+}
+
+.BlogContainer p {
+    margin-top: 8px;
+}
