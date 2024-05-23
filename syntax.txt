@@ -1,0 +1,23 @@
+array===
+
+const arr=[]
+const [arr,newArr] = useState( [ ] )
+
+function===
+
+function handle()
+{
+
+}
+
+const handle = ( ) => { 
+    return{
+
+    }
+}
+
+loop===
+
+const name = array_name.map((object) => {
+    return{blogId:object.id,title:object.title}
+});
