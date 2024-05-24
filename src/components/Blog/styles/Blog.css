@@ -5,6 +5,10 @@
     margin-top: 30px;
 }
 
+.BlogContainer .details {
+    min-width: 600px;
+}
+
 .BlogContainer h3 {
     margin-bottom: 8px;
 }

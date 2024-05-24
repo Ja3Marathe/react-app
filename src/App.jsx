@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Blog from './components/Blog';
 
@@ -50,22 +50,47 @@ function App() {
   function handleClickMe(display) {
     setDisplay(!display);
   }
+
+  function handleRemoveBlog(id) {
+    alert(`Remove Blog ${id}`);
+    const newArray = [];
+    blogs.forEach((blog) => {
+      if (blog.id !== id) {
+        newArray.push(blog);
+      }
+    });
+    setBlogs(newArray);
+  }
+
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    console.log("Use Effect Occurred");
+  }, [x, y])
+
+
   return (
     <>
       <h2 onClick={() => handleChangeName()}>{font}</h2>
       <button onClick={() => handleNewBlog()}>New Blog</button>
+      <button onClick={() => handleClickMe(display)}>{display ? "Hide" : "Show"} 2 Blog</button>
 
       {blogs.map((blog) => (
-        <Blog
-          key={blog.id}
-          title={blog.title}
-          description={blog.description}
-          imgUrl={blog.imgUrl}
-          show={blog.id === 2 ? (display ? true : false) : true}
-        />
+        <>
+          <Blog
+            key={blog.id}
+            title={blog.title}
+            description={blog.description}
+            imgUrl={blog.imgUrl}
+            show={blog.id === 2 ? (display ? true : false) : true}
+          />
+          <button onClick={() => handleRemoveBlog(blog.id)}>Remove Blog</button>
+        </>
       ))}
 
-      <button onClick={() => handleClickMe(display)}>{display ? "Hide" : "Show"} 2 Blog</button>
+      <button onClick={() => setX(x === 1 ? 0 : 1)}>Change X</button>
+      <button onClick={() => setY(y === 1 ? 0 : 1)}>Change Y</button>
+
     </>
   )
 }
