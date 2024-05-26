@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Blog from './components/Blog';
+import Form from './components/Form';
 
 function App() {
   const [blogs, setBlogs] = useState([
@@ -91,6 +92,7 @@ function App() {
       <button onClick={() => setX(x === 1 ? 0 : 1)}>Change X</button>
       <button onClick={() => setY(y === 1 ? 0 : 1)}>Change Y</button>
 
+      <Form />
     </>
   )
 }
